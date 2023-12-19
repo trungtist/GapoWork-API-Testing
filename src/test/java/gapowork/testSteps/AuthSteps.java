@@ -18,13 +18,19 @@ public class AuthSteps {
     }
 
     @When("I want to check this phone number {string}")
-    public void i_want_to_check_this_phone_number(String phone_number) { authActions.checkPhoneNumber(phone_number); }
+    public void i_want_to_check_this_phone_number(String phone_number) {
+        authActions.checkPhoneNumber(phone_number);
+    }
 
     @When("I login with {string} and {string}")
-    public void i_login_with_and(String email, String password) { authActions.loginWithEmailAndPassword(email, password); }
+    public void i_login_with_and(String email, String password) {
+        authActions.loginWithEmailAndPassword(email, password);
+    }
 
     @When("I login with {string}, {string}")
-    public void i_login_with(String phone_number, String password) { authActions.loginWithPhoneNumberAndPassword(phone_number, password); }
+    public void i_login_with(String phone_number, String password) {
+        authActions.loginWithPhoneNumberAndPassword(phone_number, password);
+    }
 
     @Then("Check status successfully")
     public void check_status_successfully() {
@@ -32,5 +38,12 @@ public class AuthSteps {
     }
 
     @Then("Check for invalid status")
-    public void check_for_invalid_status() { restAssuredThat(response -> response.statusCode(400)); }
+    public void check_for_invalid_status() {
+        restAssuredThat(response -> response.statusCode(400));
+    }
+
+//    @Then("I get access token")
+//    public void i_get_access_token() {
+//        throw new io.cucumber.java.PendingException();
+//    }
 }

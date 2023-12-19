@@ -5,19 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/AccountConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/AttachmentFileObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/Url.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/serenity.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/CucumberTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/CucumberTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/AuthSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/AuthSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/auth.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/logback-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/logback-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/serenity.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +63,11 @@
     "last_opened_file_path": "E:/ON SCHOOL/GRADUATION/GapoWork_DoAn/gapoapi-main",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }
 }]]></component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Login with phone number and password">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Login with email and password">
     <configuration name="Scenario: Check existent email" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth.feature" />
@@ -167,8 +170,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: Login with phone number and password" />
         <item itemvalue="Cucumber Java.Scenario: Login with email and password" />
+        <item itemvalue="Cucumber Java.Scenario: Login with phone number and password" />
         <item itemvalue="Cucumber Java.Scenario: Check existent phone number" />
         <item itemvalue="Cucumber Java.Scenario: Check non-existent email" />
         <item itemvalue="Cucumber Java.Scenario: Check existent email" />

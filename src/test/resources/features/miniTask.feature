@@ -13,22 +13,22 @@ Feature: Check Mini Task API
 
   @task_description
   Scenario Outline: Create and edit task with title, content
-    When  I create a task "<title>", "<workspace_id>"
-    And   Enter the description "<description>"
-    Then  Check status successfully
+    When  Enter the description "<description>"
+    And   I create a task "<title>", "<workspace_id>"
+    Then  Check success status
     And   Check the task title "<title>"
     And   Check the task description "<description>"
     When  I edit the task title "<workspace_id>", "<titleEdit>"
     And   I edit the task description "<workspace_id>", "<descriptionEdit>"
-    Then  Check status successfully
+    Then  Check success status
     When  I want to view the task detail "<workspace_id>"
-    Then  Check status successfully
+    Then  Check success status
     And   Check the task title "<titleEdit>"
     And   Check the task description "<descriptionEdit>"
     When  I delete the task "<workspace_id>"
-    Then  Check status successfully
+    Then  Check success status
     When  I want to view the task detail "<workspace_id>"
-    Then  Check for invalid status
+    Then  Check failure status
 
     Examples:
       | title           | workspace_id    | description        | titleEdit              | descriptionEdit           |

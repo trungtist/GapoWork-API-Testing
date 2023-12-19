@@ -43,6 +43,7 @@ public class AuthActions {
                 .post("https://api.gapowork.vn/auth/v3.0/check-phone-number")
                 .then()
                 .extract().response();
+
         return res.path("data.salt");
     }
 
@@ -65,15 +66,13 @@ public class AuthActions {
                 .header("Content-Type", "application/json")
                 .when()
                 .body(body)
-                .post("https://api.gapowork.vn/auth/v3.0/login")
-                .then()
-                .extract().response();
+                .post("https://api.gapowork.vn/auth/v3.0/login");
 
         user_id = res.path("data.user_id");
         access_token = res.path("data.access_token");
     }
 
-    @Step("Login with email and password")
+    @Step("Login with phone number and password")
     public void loginWithPhoneNumberAndPassword(String phone_number, String password) {
         String salt = checkPhoneNumber(phone_number);
 

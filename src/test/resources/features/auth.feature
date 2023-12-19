@@ -39,8 +39,10 @@ Feature: Check Authentication API
 
   @login_with_email_&_password
   Scenario Outline: Login with email and password
-    When I login with "<email>" and "<password>"
+    When  I want to check this email "<email>"
+    And I login with "<email>" and "<password>"
     Then Check status successfully
+#    And I get access token
 
     Examples:
     | email                  | password     |
