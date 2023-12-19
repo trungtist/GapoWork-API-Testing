@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/AttachmentFileObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/Url.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update minitask service">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/AuthSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/AuthSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/auth.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,20 +46,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/ON SCHOOL/GRADUATION/GapoWork_DoAn/gapoapi-main",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/ON SCHOOL/GRADUATION/GapoWork_DoAn/gapoapi-main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cucumber Java.Scenario: Login with email and password">
     <configuration name="Scenario: Check existent email" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
@@ -187,6 +180,19 @@
       <option name="presentableId" value="Default" />
       <updated>1702650140074</updated>
     </task>
+    <task id="LOCAL-00001" summary="update minitask service">
+      <option name="closed" value="true" />
+      <created>1702982235735</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702982235735</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update minitask service" />
+    <option name="LAST_COMMIT_MESSAGE" value="update minitask service" />
   </component>
 </project>

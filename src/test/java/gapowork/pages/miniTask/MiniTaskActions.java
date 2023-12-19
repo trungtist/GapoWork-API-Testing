@@ -11,12 +11,12 @@ import static gapowork.pages.auth.AuthActions.access_token;
 
 public class MiniTaskActions {
 
+    public static String taskId;
+
     @Step("Create task")
     public void createTask (String workspace_id, MiniTaskObject body) {
 
-        System.out.println("access_token" + access_token);
-
-        SerenityRest
+        Response res = SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
                 .auth().oauth2(access_token)
@@ -24,26 +24,28 @@ public class MiniTaskActions {
                 .when()
                 .body(body)
                 .post(CREATE_TASK_URL);
+        taskId = res.path("data.id");
+        System.out.println("Task Id: " + taskId);
     }
 
     @Step("Edit task")
-    public void editTask (String workspace_id, Object body, String task_Id) {
+    public void editTask (String workspace_id, Object body, String task_id) {
         SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
                 .auth().oauth2(access_token)
                 .header("x-gapo-workspace-id", workspace_id)
-                .pathParam("taskId", task_Id)
+                .pathParam("taskId", task_id)
                 .when()
                 .body(body)
                 .patch(EDIT_TASK_URL);
     }
 
     @Step("Delete task")
-    public void deleteTask(String workspace_id, String task_Id) {
+    public void deleteTask(String workspace_id, String task_id) {
         SerenityRest.given().contentType(ContentType.JSON)
                 .auth().oauth2(access_token)
-                .pathParam("taskId", task_Id)
+                .pathParam("taskId", task_id)
                 .header("x-gapo-workspace-id", workspace_id)
                 .when()
                 .delete(DELETE_TASK_URL);

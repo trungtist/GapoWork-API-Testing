@@ -1,36 +1,41 @@
 package gapowork.models.miniTask;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import gapowork.models.media.AttachmentFileObject;
 
 import java.util.List;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class MiniTaskObject {
-    @JsonProperty("title")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class MiniTaskResponse {
+    @JsonProperty("id")
+    private String taskId;
+    @JsonProperty("workspace_id")
+    private String workspace_id;
     private String title;
-
-    @JsonProperty("description")
     private String description;
-
-    @JsonProperty("assignees")
     private List<Integer> assignees;
-
-    @JsonProperty("watchers")
     private List<Integer> watchers;
-
-    @JsonProperty("due_date")
-    private long due_date;
-
-    @JsonProperty("status")
-    private int status;
-
-    @JsonProperty("priority")
-    private int priority;
-
-    @JsonProperty("attachment_files")
+    private Long due_date;
+    private Integer status;
+    private Integer priority;
     private List<AttachmentFileObject> attachment_files;
+
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public String getWorkspace_id() {
+        return workspace_id;
+    }
+
+    public void setWorkspace_id(String workspace_id) {
+        this.workspace_id = workspace_id;
+    }
 
     public String getTitle() {
         return title;
@@ -95,20 +100,4 @@ public class MiniTaskObject {
     public void setAttachment_files(List<AttachmentFileObject> attachment_files) {
         this.attachment_files = attachment_files;
     }
-
-    public MiniTaskObject (String title, String description, List<Integer> assignees, List<Integer> watchers, long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
-        this.title = title;
-        this.description = description;
-        this.assignees = assignees;
-        this.watchers = watchers;
-        this.due_date = due_date;
-        this.status = status;
-        this.priority = priority;
-        this.attachment_files = attachment_files;
-    }
-//
-    public MiniTaskObject () {}
-
 }
-
-

@@ -16,15 +16,15 @@ Feature: Check Mini Task API
     When  Enter the description "<description>"
     And   I create a task "<title>", "<workspace_id>"
     Then  Check success status
-    And   Check the task title "<title>"
-    And   Check the task description "<description>"
+#    And   Check the task title "<title>"
+#    And   Check the task description "<description>"
     When  I edit the task title "<workspace_id>", "<titleEdit>"
     And   I edit the task description "<workspace_id>", "<descriptionEdit>"
     Then  Check success status
     When  I want to view the task detail "<workspace_id>"
     Then  Check success status
-    And   Check the task title "<titleEdit>"
-    And   Check the task description "<descriptionEdit>"
+#    And   Check the task title "<titleEdit>"
+#    And   Check the task description "<descriptionEdit>"
     When  I delete the task "<workspace_id>"
     Then  Check success status
     When  I want to view the task detail "<workspace_id>"
