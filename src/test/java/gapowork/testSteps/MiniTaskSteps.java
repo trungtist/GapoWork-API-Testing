@@ -37,7 +37,23 @@ public class MiniTaskSteps {
     }
 
     @When("Enter the description {string}")
-    public void enter_the_description(String desc) { miniTaskObject.setDescription(desc); }
+    public void enter_the_description(String desc) {
+        miniTaskObject.setDescription(desc);
+    }
+
+    @When("Enter the priority {string}")
+    public void enter_the_priority(String priority) {
+        miniTaskObject.setPriority(Integer.parseInt(priority));
+    }
+
+    @And("Enter the status {string}")
+    public void enter_the_status(String status) {
+        miniTaskObject.setStatus(Integer.parseInt(status));
+    }
+
+    @When("Add attachments {string}")
+    public void add_attachments(String url) {
+    }
 
     @And("I create a task {string}, {string}")
     public void i_create_a_task(String title, String workspace_id) {
@@ -59,6 +75,24 @@ public class MiniTaskSteps {
         miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
     }
 
+    @When("I edit the task priority {string}, {string}")
+    public void i_edit_the_task_priority(String workspace_id, String edited_priority) {
+        miniTaskObject.setPriority(Integer.parseInt(edited_priority));
+        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    }
+
+    @And("I edit the task status {string}, {string}")
+    public void i_edit_the_task_status(String workspace_id, String edited_status) {
+        miniTaskObject.setStatus(Integer.parseInt(edited_status));
+        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    }
+
+    @When("I continue to add attachment {string}, {string}")
+    public void i_continue_to_add_attachment(String string, String string2) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
     @When("I want to view the task detail {string}")
     public void i_want_to_view_the_task_detail(String workspace_id) {
         String res = miniTaskActions.viewTaskDetail(getTaskId(), workspace_id).asString();
@@ -76,7 +110,9 @@ public class MiniTaskSteps {
     }
 
     @Then("Check failure status")
-    public void check__failure_status() { restAssuredThat(response -> response.statusCode(400)); }
+    public void check__failure_status() {
+        restAssuredThat(response -> response.statusCode(400));
+    }
 
     @And("Check the task title {string}")
     public void check_the_task_title(String expectantTitle) {
@@ -86,6 +122,20 @@ public class MiniTaskSteps {
     @And("Check the task description {string}")
     public void check_the_task_description(String expectantDesc) {
         miniTaskVerify.verifyDescription(miniTaskResponse.getDescription(), expectantDesc);
+    }
+
+    @And("Check the task priority {string}")
+    public void check_the_task_priority(int priority) {
+    }
+
+    @And("Check the task status {string}")
+    public void check_the_task_status(int status) {
+    }
+
+    @And("Check the task has attachments {string}")
+    public void check_the_task_has_attachments(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 
 }
