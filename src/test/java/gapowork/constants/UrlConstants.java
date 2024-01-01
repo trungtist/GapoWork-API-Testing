@@ -17,4 +17,7 @@ public interface UrlConstants {
     String VIEW_TASK_DETAIL_URL = "/mini-task/v1.0/tasks/{taskId}";
 
     String DELETE_TASK_URL = "/mini-task/v1.0/tasks/{taskId}";
+
+    // Upload service
+    String UPLOAD_FILE_URL = "/media/v1.0/files";
 }

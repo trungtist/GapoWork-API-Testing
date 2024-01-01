@@ -8,7 +8,6 @@ import net.serenitybdd.annotations.Steps;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class AuthSteps {
-
     @Steps
     AuthActions authActions = new AuthActions();
 
@@ -32,18 +31,13 @@ public class AuthSteps {
         authActions.loginWithPhoneNumberAndPassword(phone_number, password);
     }
 
-    @Then("Check status successfully")
-    public void check_status_successfully() {
-        restAssuredThat(response -> response.statusCode(200));
+    @Then("Check status successfully {int}")
+    public void check_status_successfully(int successStatus) {
+        restAssuredThat(response -> response.statusCode(successStatus));
     }
 
-    @Then("Check for invalid status")
-    public void check_for_invalid_status() {
-        restAssuredThat(response -> response.statusCode(400));
+    @Then("Check for invalid status {int}")
+    public void check_for_invalid_status(int failStatus) {
+        restAssuredThat(response -> response.statusCode(failStatus));
     }
-
-//    @Then("I get access token")
-//    public void i_get_access_token() {
-//        throw new io.cucumber.java.PendingException();
-//    }
 }
