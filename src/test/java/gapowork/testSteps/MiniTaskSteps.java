@@ -9,18 +9,20 @@ import gapowork.pages.media.UploadActions;
 import gapowork.pages.miniTask.MiniTaskActions;
 import gapowork.pages.miniTask.MiniTaskVerify;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import lombok.SneakyThrows;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.Serenity;
+import org.apache.commons.beanutils.PropertyUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static net.serenitybdd.rest.SerenityRest.lastResponse;
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 
 public class MiniTaskSteps {
@@ -29,6 +31,7 @@ public class MiniTaskSteps {
     MiniTaskObject miniTaskObject = new MiniTaskObject();
     MiniTaskResponse miniTaskResponse = new MiniTaskResponse();
     MiniTaskVerify miniTaskVerify = new MiniTaskVerify();
+    private List<AttachmentFileObject> attachmentFileObjectList = new ArrayList<>();
 
     public static String getTaskId() {
         return Serenity.sessionVariableCalled("taskId").toString();
@@ -49,18 +52,26 @@ public class MiniTaskSteps {
         miniTaskObject.setStatus(status);
     }
 
+    @SneakyThrows
     @When("Add attachments {string}")
     public void add_attachments(String url) {
         String[] arrFileUrl = Helper.splitStringToList(url);
         for (String s : arrFileUrl) {
             Response res = UploadActions.uploadFile(s);
-//            attachmentFileObjectList.add(res.jsonPath().getObject("", FileObject.class));
+            attachmentFileObjectList.add(res.jsonPath().getObject("", AttachmentFileObject.class));
         }
     }
 
     @And("I create a task {string}, {string}")
     public void i_create_a_task(String title, String workspace_id) {
-        MiniTaskObject miniTaskBody = new MiniTaskObject(title, miniTaskObject.getDescription(), miniTaskObject.getAssignees(), miniTaskObject.getWatchers(), miniTaskObject.getDue_date(), miniTaskObject.getStatus(), miniTaskObject.getPriority(), miniTaskObject.getAttachment_files());
+        MiniTaskObject miniTaskBody = new MiniTaskObject(title,
+                miniTaskObject.getDescription(),
+                miniTaskObject.getAssignees(),
+                miniTaskObject.getWatchers(),
+                miniTaskObject.getDue_date(),
+                miniTaskObject.getStatus(),
+                miniTaskObject.getPriority(),
+                attachmentFileObjectList);
         miniTaskActions.createTask(workspace_id, miniTaskBody);
 
         Serenity.setSessionVariable("taskId").to(lastResponse().body().path("data.id"));
@@ -87,6 +98,18 @@ public class MiniTaskSteps {
     @And("I edit the task status {string}, {int}")
     public void i_edit_the_task_status(String workspace_id, int edited_status) {
         miniTaskObject.setStatus(edited_status);
+        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    }
+
+    @When("I continue to add attachment {string}, {string}")
+    public void i_continue_to_add_attachment(String new_url, String workspace_id) {
+        String[] arrFileUrl = Helper.splitStringToList(new_url);
+        for (String s : arrFileUrl) {
+            Response res = UploadActions.uploadFile(s);
+            attachmentFileObjectList.add(res.jsonPath().getObject("", AttachmentFileObject.class));
+        }
+
+        miniTaskObject.setAttachment_files(attachmentFileObjectList);
         miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
     }
 
@@ -122,8 +145,13 @@ public class MiniTaskSteps {
     }
 
     @And("Check the task has attachments {string}")
-    public void check_the_task_has_attachments(String string) {
-    }
+    public void check_the_task_has_attachments(String expectantFileName) {
+        String[] arrFileName = Helper.splitStringToList(expectantFileName);
+        List<String> actualFileName = miniTaskResponse.getAttachment_files()
+                .stream().map(AttachmentFileObject::getName).collect(Collectors.toList());
 
+        miniTaskVerify.verifyAtfs(actualFileName, Arrays.asList(arrFileName));
+        System.out.println("Expected file name: " + expectantFileName + "  Actual file name: " + actualFileName);
+    }
 
 }

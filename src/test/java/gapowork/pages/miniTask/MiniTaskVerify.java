@@ -50,7 +50,7 @@ public class MiniTaskVerify {
     }
 
     @Step("Verify atf")
-    public MiniTaskVerify verifyAtfs(List<Integer> actualAtfs, List<Integer> expectantAtf) {
+    public MiniTaskVerify verifyAtfs(List<String> actualAtfs, List<String> expectantAtf) {
         Assertions.assertThat(actualAtfs).isEqualTo(expectantAtf);
         return this;
     }

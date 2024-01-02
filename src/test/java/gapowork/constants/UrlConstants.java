@@ -19,5 +19,5 @@ public interface UrlConstants {
     String DELETE_TASK_URL = "/mini-task/v1.0/tasks/{taskId}";
 
     // Upload service
-    String UPLOAD_FILE_URL = "/media/v1.0/files";
+    String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/images";
 }

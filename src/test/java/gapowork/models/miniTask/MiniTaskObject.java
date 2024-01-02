@@ -33,7 +33,9 @@ public @Data class MiniTaskObject {
     @JsonProperty("attachment_files")
     private List<AttachmentFileObject> attachment_files;
 
-    public MiniTaskObject(String title, String description, List<Integer> assignees, List<Integer> watchers, long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
+    public MiniTaskObject(String title,
+                          String description, List<Integer> assignees,
+                          List<Integer> watchers, long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
         this.title = title;
         this.description = description;
         this.assignees = assignees;

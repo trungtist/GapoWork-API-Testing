@@ -67,10 +67,15 @@ public class MiniTaskActions {
                 .get(VIEW_TASK_DETAIL_URL);
     }
 
-    @SneakyThrows
-    @Step("Get file data")
-    public void getFileData(String url) {
-        Response res = UploadActions.uploadFile(url);
-    }
+//    @SneakyThrows
+//    @Step("Get data after uploaded file")
+//    public AttachmentFileObject dataUploadFile (String url) {
+//        Response res = UploadActions.uploadFile(url);
+//        FileObject fileObject = res.jsonPath().getObject("", FileObject.class);
+//        AttachmentFileObject attachmentFileObject = new AttachmentFileObject();
+//        PropertyUtils.copyProperties(attachmentFileObject, fileObject);
+//
+//        return attachmentFileObject;
+//    }
 
 }
