@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import gapowork.models.media.AttachmentFileObject;
 import lombok.Data;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,7 +24,7 @@ public @Data class MiniTaskObject {
     private List<Integer> watchers;
 
     @JsonProperty("due_date")
-    private long due_date;
+    private Long due_date;
 
     @JsonProperty("status")
     private int status;
@@ -35,7 +37,7 @@ public @Data class MiniTaskObject {
 
     public MiniTaskObject(String title,
                           String description, List<Integer> assignees,
-                          List<Integer> watchers, long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
+                          List<Integer> watchers, Long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
         this.title = title;
         this.description = description;
         this.assignees = assignees;

@@ -12,6 +12,10 @@ public class Helper {
 
     @SneakyThrows
     public static void shortWait() {
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.SECONDS.sleep(2);
+    }
+
+    public static long getTimestamp () {
+        return System.currentTimeMillis();
     }
 }

@@ -20,4 +20,7 @@ public interface UrlConstants {
 
     // Upload service
     String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/images";
+
+    //Search service
+    String SEARCH_USER_IN_WORKSPACE = "/search/v2.0/search-user-invite-workspace";
 }

@@ -3,6 +3,7 @@ package gapowork.pages.miniTask;
 import net.serenitybdd.annotations.Step;
 import org.assertj.core.api.Assertions;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class MiniTaskVerify {
@@ -32,7 +33,7 @@ public class MiniTaskVerify {
     }
 
     @Step("Verify due date")
-    public MiniTaskVerify verifyDueDate(long actualDueDate, long expectantDueDate) {
+    public MiniTaskVerify verifyDueDate(Long actualDueDate, Long expectantDueDate) {
         Assertions.assertThat(actualDueDate).isEqualTo(expectantDueDate);
         return this;
     }

@@ -1,15 +1,10 @@
 package gapowork.pages.miniTask;
 
-import gapowork.models.media.AttachmentFileObject;
-import gapowork.models.media.FileObject;
 import gapowork.models.miniTask.MiniTaskObject;
-import gapowork.pages.media.UploadActions;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import lombok.SneakyThrows;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
-import org.apache.commons.beanutils.PropertyUtils;
 
 import static gapowork.constants.UrlConstants.*;
 import static gapowork.helper.Helper.*;

@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update minitask service and atf object">
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberUpload.java" afterDir="false" />
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="add datas">
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/SearchActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/media/AttachmentFileObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/AttachmentFileObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/media/FileObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/FileObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/media/UrlObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/UrlObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/helper/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/media/FileObject.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
@@ -79,16 +77,16 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Create and edit task with attachment files">
-    <configuration name="Scenario: Check existent phone number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Create and edit with assignee and watcher">
+    <configuration name="Scenario: Create and edit task with attachment files" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth.feature" />
-      <option name="GLUE" value="gapowork.testSteps net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" />
+      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Check existent phone number$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check existent phone number$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Check existent phone number" />
+      <option name="NAME_FILTER" value="^Create and edit task with attachment files$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit task with attachment files$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and edit task with attachment files" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -100,15 +98,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Create and edit task with attachment files" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Create and edit task with due date" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" />
       <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Create and edit task with attachment files$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit task with attachment files$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Create and edit task with attachment files" />
+      <option name="NAME_FILTER" value="^Create and edit task with due date$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit task with due date$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and edit task with due date" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -140,6 +138,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: Create and edit with assignee and watcher" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" />
+      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GapoWork-API-Testing" />
+      <option name="NAME_FILTER" value="^Create and edit with assignee and watcher$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit with assignee and watcher$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and edit with assignee and watcher" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: Login with email and password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth.feature" />
@@ -160,33 +178,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Login with phone number and password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth.feature" />
-      <option name="GLUE" value="gapowork.testSteps net.serenitybdd.cucumber.actors" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Login with phone number and password$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login with phone number and password$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Login with phone number and password" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Create and edit with assignee and watcher" />
+        <item itemvalue="Cucumber Java.Scenario: Create and edit task with due date" />
         <item itemvalue="Cucumber Java.Scenario: Create and edit task with attachment files" />
         <item itemvalue="Cucumber Java.Scenario: Create and edit task with priority, status" />
         <item itemvalue="Cucumber Java.Scenario: Login with email and password" />
-        <item itemvalue="Cucumber Java.Scenario: Login with phone number and password" />
-        <item itemvalue="Cucumber Java.Scenario: Check existent phone number" />
       </list>
     </recent_temporary>
   </component>
@@ -223,13 +221,31 @@
       <option name="project" value="LOCAL" />
       <updated>1704131164951</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update tc 03 minitask">
+      <option name="closed" value="true" />
+      <created>1704210312193</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704210312193</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add datas">
+      <option name="closed" value="true" />
+      <created>1704210344416</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704210344416</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update minitask service" />
     <MESSAGE value="update minitask service and atf object" />
-    <option name="LAST_COMMIT_MESSAGE" value="update minitask service and atf object" />
+    <MESSAGE value="update tc 03 minitask" />
+    <MESSAGE value="add datas" />
+    <option name="LAST_COMMIT_MESSAGE" value="add datas" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

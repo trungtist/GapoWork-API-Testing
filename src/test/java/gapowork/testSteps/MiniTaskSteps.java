@@ -2,20 +2,20 @@ package gapowork.testSteps;
 
 import gapowork.helper.Helper;
 import gapowork.models.media.AttachmentFileObject;
-import gapowork.models.media.FileObject;
 import gapowork.models.miniTask.MiniTaskObject;
 import gapowork.models.miniTask.MiniTaskResponse;
+import gapowork.pages.SearchActions;
 import gapowork.pages.media.UploadActions;
 import gapowork.pages.miniTask.MiniTaskActions;
 import gapowork.pages.miniTask.MiniTaskVerify;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import lombok.SneakyThrows;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.Serenity;
-import org.apache.commons.beanutils.PropertyUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,6 +31,7 @@ public class MiniTaskSteps {
     MiniTaskObject miniTaskObject = new MiniTaskObject();
     MiniTaskResponse miniTaskResponse = new MiniTaskResponse();
     MiniTaskVerify miniTaskVerify = new MiniTaskVerify();
+    SearchActions searchActions = new SearchActions();
     private List<AttachmentFileObject> attachmentFileObjectList = new ArrayList<>();
 
     public static String getTaskId() {
@@ -60,6 +61,22 @@ public class MiniTaskSteps {
             Response res = UploadActions.uploadFile(s);
             attachmentFileObjectList.add(res.jsonPath().getObject("", AttachmentFileObject.class));
         }
+    }
+
+    @When("Add due date")
+    public void add_due_date() {
+        long current_dueDate = Helper.getTimestamp();
+        System.out.println("Current due date: " + current_dueDate);
+        miniTaskObject.setDue_date(current_dueDate);
+    }
+
+    @When("I add a assignee {string}, {string}")
+    public void i_add_a_assignee(String assignee_key, String workspace_id) {
+        miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(workspace_id, assignee_key));
+    }
+    @And("I add a watcher {string}, {string}")
+    public void i_add_a_watcher(String watcher_key, String workspace_id) {
+        miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(workspace_id, watcher_key));
     }
 
     @And("I create a task {string}, {string}")
@@ -113,6 +130,25 @@ public class MiniTaskSteps {
         miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
     }
 
+    @When("I edit the task due date {string}")
+    public void i_edit_the_task_due_date(String workspace_id) {
+        long new_dueDate = Helper.getTimestamp() + 2;
+        System.out.println("New due date: " + new_dueDate);
+        miniTaskObject.setDue_date(new_dueDate);
+        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    }
+
+    @When("I continue to add assignee {string}, {string}")
+    public void i_continue_to_add_assignee(String assignee_newKey, String workspace_id) {
+        miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(workspace_id, assignee_newKey));
+        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    }
+    @When("I continue to add watcher {string}, {string}")
+    public void i_continue_to_add_watcher(String watcher_newKey, String workspace_id) {
+        miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(workspace_id, watcher_newKey));
+        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    }
+
     @When("I want to view the task detail {string}")
     public void i_want_to_view_the_task_detail(String workspace_id) {
         String res = miniTaskActions.viewTaskDetail(getTaskId(), workspace_id).asString();
@@ -125,33 +161,60 @@ public class MiniTaskSteps {
     }
 
     @And("Check the task title {string}")
-    public void check_the_task_title(String expectantTitle) {
-        miniTaskVerify.verifyTitle(miniTaskResponse.getTitle(), expectantTitle);
+    public void check_the_task_title(String expectant_title) {
+        miniTaskVerify.verifyTitle(miniTaskResponse.getTitle(), expectant_title);
     }
 
     @And("Check the task description {string}")
-    public void check_the_task_description(String expectantDesc) {
-        miniTaskVerify.verifyDescription(miniTaskResponse.getDescription().getText(), expectantDesc);
+    public void check_the_task_description(String expectant_desc) {
+        miniTaskVerify.verifyDescription(miniTaskResponse.getDescription().getText(), expectant_desc);
     }
 
     @And("Check the task priority {int}")
-    public void check_the_task_priority(int expectantPriority) {
-        miniTaskVerify.verifyPriority(miniTaskResponse.getPriority(), expectantPriority);
+    public void check_the_task_priority(int expectant_priority) {
+        miniTaskVerify.verifyPriority(miniTaskResponse.getPriority(), expectant_priority);
     }
 
     @And("Check the task status {int}")
-    public void check_the_task_status(int expectantStatus) {
-        miniTaskVerify.verifyStatus(miniTaskResponse.getStatus(), expectantStatus);
+    public void check_the_task_status(int expectant_status) {
+        miniTaskVerify.verifyStatus(miniTaskResponse.getStatus(), expectant_status);
     }
 
     @And("Check the task has attachments {string}")
-    public void check_the_task_has_attachments(String expectantFileName) {
-        String[] arrFileName = Helper.splitStringToList(expectantFileName);
-        List<String> actualFileName = miniTaskResponse.getAttachment_files()
-                .stream().map(AttachmentFileObject::getName).collect(Collectors.toList());
+    public void check_the_task_has_attachments(String expectant_fileName) {
+        String[] arrFileName = Helper.splitStringToList(expectant_fileName);
+        List<String> actual_fileName = miniTaskResponse.getAttachment_files()
+                .stream().map(AttachmentFileObject::getName)
+                .collect(Collectors.toList());
 
-        miniTaskVerify.verifyAtfs(actualFileName, Arrays.asList(arrFileName));
-        System.out.println("Expected file name: " + expectantFileName + "  Actual file name: " + actualFileName);
+        miniTaskVerify.verifyAtfs(actual_fileName, Arrays.asList(arrFileName));
+        System.out.println("Expected file name: " + expectant_fileName + "  Actual file name: " + actual_fileName);
+    }
+    @And("Check the task due date")
+    public void check_the_task_due_date() {
+        miniTaskVerify.verifyDueDate(miniTaskResponse.getDue_date(), miniTaskObject.getDue_date());
+    }
+
+    @Then("Check the task has assignee from id")
+    public void check_the_task_has_assignee_from_id() {
+        List<Integer> actual_assigneeId = miniTaskResponse.getAssignees()
+                .stream()
+                .map(MiniTaskResponse.Assignees::getAssignee_id)
+                .collect(Collectors.toList());
+
+        miniTaskVerify.verifyAssignees(actual_assigneeId, miniTaskObject.getAssignees());
+        System.out.println("Actual Assignee: " + actual_assigneeId);
+    }
+
+    @And("Check the task has watcher from id")
+    public void check_the_task_has_watcher_from_id() {
+        List<Integer> actual_watcherId = miniTaskResponse.getWatchers()
+                .stream()
+                .map(MiniTaskResponse.Watchers::getWatcher_id)
+                .collect(Collectors.toList());
+
+        miniTaskVerify.verifyWatchers(actual_watcherId, miniTaskObject.getWatchers());
+        System.out.println("Actual Watcher: " + actual_watcherId);
     }
 
 }

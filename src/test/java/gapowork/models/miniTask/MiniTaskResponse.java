@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import gapowork.models.media.AttachmentFileObject;
 import lombok.Data;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -15,8 +16,8 @@ public @Data class MiniTaskResponse {
     private String workspace_id;
     private String title;
     private Description description;
-    private List<Integer> assignees;
-    private List<Integer> watchers;
+    private List<Assignees> assignees;
+    private List<Watchers> watchers;
     private Long due_date;
     private Integer status;
     private Integer priority;
@@ -31,7 +32,23 @@ public @Data class MiniTaskResponse {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static @Data class Creator {
         @JsonProperty("id")
-        private Integer creatorId;
+        private Integer creator_id;
+        @JsonProperty("display_name")
+        private String display_name;
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static @Data class Assignees {
+        @JsonProperty("id")
+        private Integer assignee_id;
+        @JsonProperty("display_name")
+        private String display_name;
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static @Data class Watchers {
+        @JsonProperty("id")
+        private Integer watcher_id;
         @JsonProperty("display_name")
         private String display_name;
     }
