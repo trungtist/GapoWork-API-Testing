@@ -1,12 +1,12 @@
 package gapowork.pages.media;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 
 import java.io.File;
 
-import static gapowork.constants.UrlConstants.UPLOAD_FILE_URL;
 import static gapowork.pages.auth.AuthActions.access_token;
 
 public class UploadActions {

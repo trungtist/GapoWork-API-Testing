@@ -139,3 +139,33 @@ Feature: Check Mini Task API
 #    Examples:
 #      | title                                     | workspace_id    | assignee_key | watcher_key | assignee_newKey | watcher_newKey  |successStatus | failStatus  |
 #      | Automation task with assignee and watcher | 581770764199841 | t            | y           | a               | b               |200           | 400         |
+
+  @task_full-info
+  Scenario Outline: Create task with all information
+    When Enter the description "<description>"
+    And Enter the priority <priority>
+    And Enter the status <status>
+    And Add due date
+    And Add attachments "<url>"
+    And I add a assignee "<assignee_key>", "<workspace_id>"
+    And I add a watcher "<watcher_key>", "<workspace_id>"
+    And I create a task "<title>", "<workspace_id>"
+    Then Check status successfully <successStatus>
+    When I want to view the task detail "<workspace_id>"
+    Then Check status successfully <successStatus>
+    And Check the task description "<description>"
+    And Check the task priority <priority>
+    And Check the task status <status>
+    And Check the task due date
+    And Check the task has attachments "<file_name>"
+    And Check the task has assignee from id
+    And Check the task has watcher from id
+    When I delete the task "<workspace_id>"
+    Then Check status successfully <successStatus>
+    When I want to view the task detail "<workspace_id>"
+    Then Check for invalid status <failStatus>
+
+    Examples:
+      | title                                | workspace_id    | description            | priority | status | url                                  | file_name   | assignee_key | watcher_key | successStatus | failStatus |
+      | Automation task with all information | 581770764199841 | Automation description | 2        | 0      | src/test/resources/datas/kazuha4.jpg | kazuha4.jpg | m            | n           | 200           | 400        |
+    

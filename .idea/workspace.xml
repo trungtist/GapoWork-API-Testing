@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="add datas">
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/SearchActions.java" afterDir="false" />
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update tc04">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/media/FileObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/miniTask/MiniTaskResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/task.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +71,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features" />
+      <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features\miniTaskService" />
+    </key>
+  </component>
   <component name="RunManager" selected="Cucumber Java.Scenario: Create and edit with assignee and watcher">
     <configuration name="Scenario: Create and edit task with attachment files" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
@@ -237,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704210344416</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update tc04">
+      <option name="closed" value="true" />
+      <created>1704279059445</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704279059445</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -245,7 +253,8 @@
     <MESSAGE value="update minitask service and atf object" />
     <MESSAGE value="update tc 03 minitask" />
     <MESSAGE value="add datas" />
-    <option name="LAST_COMMIT_MESSAGE" value="add datas" />
+    <MESSAGE value="update tc04" />
+    <option name="LAST_COMMIT_MESSAGE" value="update tc04" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

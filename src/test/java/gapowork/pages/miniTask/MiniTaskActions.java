@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 
+import java.util.List;
+
 import static gapowork.constants.UrlConstants.*;
 import static gapowork.helper.Helper.*;
 import static gapowork.pages.auth.AuthActions.access_token;
@@ -60,6 +62,19 @@ public class MiniTaskActions {
                 .pathParam("taskId", task_id)
                 .when()
                 .get(VIEW_TASK_DETAIL_URL);
+    }
+
+    @Step("Get task list")
+    public List<String> getTaskList (String workspace_id) {
+        Response res = SerenityRest
+                .given()
+                .contentType(ContentType.JSON)
+                .auth().oauth2(access_token)
+                .header("x-gapo-workspace-id", workspace_id)
+                .when()
+                .get(GET_TASK_LIST_URL);
+
+        return res.path("data.id");
     }
 
 //    @SneakyThrows
