@@ -51,8 +51,8 @@ Feature: Check Authentication API
   @login_with_phone-number_and_password
   Scenario Outline: Login with phone number and password
     When I login with "<phone_number>", "<password>"
-    Then Check status successfully <failStatus>
+    Then Check status successfully <successStatus>
 
     Examples:
-      | phone_number  | password    | failStatus |
-      | 0977620025    | Trung1@gapo | 400        |
+      | phone_number  | password    | successStatus |
+      | 0977620025    | Trung1@gapo | 200        |

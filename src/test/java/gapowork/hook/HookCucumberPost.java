@@ -10,16 +10,17 @@ import net.thucydides.model.util.EnvironmentVariables;
 
 import java.awt.*;
 
-import static gapowork.constants.AccountConstants.*;
+import static gapowork.constants.AccountConstants.EMAIL;
+import static gapowork.constants.AccountConstants.PASSWORD;
 
-public class HookCucumberMiniTask extends Base {
+public class HookCucumberPost extends Base{
     private static boolean beforeFeature = false;
 
     @Steps
     AuthActions authActions = new AuthActions();
     EnvironmentVariables env;
 
-    @Before("@miniTask")
+    @Before("@post")
     public void user_login_on_gapowork(Scenario scenario) throws InterruptedException, AWTException {
         RestAssured.baseURI = EnvironmentSpecificConfiguration.from(env).getProperty("base.url");
 

@@ -19,8 +19,12 @@ public interface UrlConstants {
     String DELETE_TASK_URL = "/mini-task/v1.0/tasks/{taskId}";
 
     // Upload service
-    String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/images";
+    String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/files";
 
-    //Search service
+    // Search service
     String SEARCH_USER_IN_WORKSPACE = "/search/v2.0/search-user-invite-workspace";
+
+    // Post service
+    String CREATE_POST_URL = "/post/v1.0/posts";
+    String UPDATE_POST_URL = "/post/v1.0/posts/{id}";
 }

@@ -33,6 +33,7 @@ public class MiniTaskSteps {
     MiniTaskVerify miniTaskVerify = new MiniTaskVerify();
     SearchActions searchActions = new SearchActions();
     private List<AttachmentFileObject> attachmentFileObjectList = new ArrayList<>();
+    List<String> task_ids;
 
     public static String getTaskId() {
         return Serenity.sessionVariableCalled("taskId").toString();
@@ -70,17 +71,17 @@ public class MiniTaskSteps {
         miniTaskObject.setDue_date(current_dueDate);
     }
 
-    @When("I add a assignee {string}, {string}")
-    public void i_add_a_assignee(String assignee_key, String workspace_id) {
-        miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(workspace_id, assignee_key));
+    @When("I add a assignee {string}")
+    public void i_add_a_assignee(String assignee_key) {
+        miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(assignee_key));
     }
     @And("I add a watcher {string}, {string}")
-    public void i_add_a_watcher(String watcher_key, String workspace_id) {
-        miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(workspace_id, watcher_key));
+    public void i_add_a_watcher(String watcher_key) {
+        miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(watcher_key));
     }
 
-    @And("I create a task {string}, {string}")
-    public void i_create_a_task(String title, String workspace_id) {
+    @And("I create a task {string}")
+    public void i_create_a_task(String title) {
         MiniTaskObject miniTaskBody = new MiniTaskObject(title,
                 miniTaskObject.getDescription(),
                 miniTaskObject.getAssignees(),
@@ -89,37 +90,37 @@ public class MiniTaskSteps {
                 miniTaskObject.getStatus(),
                 miniTaskObject.getPriority(),
                 attachmentFileObjectList);
-        miniTaskActions.createTask(workspace_id, miniTaskBody);
+        miniTaskActions.createTask(miniTaskBody);
 
         Serenity.setSessionVariable("taskId").to(lastResponse().body().path("data.id"));
     }
 
-    @When("I edit the task title {string}, {string}")
-    public void i_edit_the_task_title(String workspace_id, String edited_title) {
+    @When("I edit the task title {string}")
+    public void i_edit_the_task_title(String edited_title) {
         miniTaskObject.setTitle(edited_title);
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @And("I edit the task description {string}, {string}")
-    public void i_edit_the_task_description(String workspace_id, String edited_description) {
+    @And("I edit the task description {string}")
+    public void i_edit_the_task_description(String edited_description) {
         miniTaskObject.setDescription(edited_description);
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @When("I edit the task priority {string}, {int}")
-    public void i_edit_the_task_priority(String workspace_id, int edited_priority) {
+    @When("I edit the task priority {int}")
+    public void i_edit_the_task_priority(int edited_priority) {
         miniTaskObject.setPriority(edited_priority);
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @And("I edit the task status {string}, {int}")
-    public void i_edit_the_task_status(String workspace_id, int edited_status) {
+    @And("I edit the task status {int}")
+    public void i_edit_the_task_status(int edited_status) {
         miniTaskObject.setStatus(edited_status);
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @When("I continue to add attachment {string}, {string}")
-    public void i_continue_to_add_attachment(String new_url, String workspace_id) {
+    @When("I continue to add attachment {string}")
+    public void i_continue_to_add_attachment(String new_url) {
         String[] arrFileUrl = Helper.splitStringToList(new_url);
         for (String s : arrFileUrl) {
             Response res = UploadActions.uploadFile(s);
@@ -127,37 +128,49 @@ public class MiniTaskSteps {
         }
 
         miniTaskObject.setAttachment_files(attachmentFileObjectList);
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @When("I edit the task due date {string}")
-    public void i_edit_the_task_due_date(String workspace_id) {
+    @When("I edit the task due date")
+    public void i_edit_the_task_due_date() {
         long new_dueDate = Helper.getTimestamp() + 2;
         System.out.println("New due date: " + new_dueDate);
         miniTaskObject.setDue_date(new_dueDate);
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @When("I continue to add assignee {string}, {string}")
-    public void i_continue_to_add_assignee(String assignee_newKey, String workspace_id) {
-        miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(workspace_id, assignee_newKey));
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    @When("I continue to add assignee {string}")
+    public void i_continue_to_add_assignee(String assignee_newKey) {
+        miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(assignee_newKey));
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
-    @When("I continue to add watcher {string}, {string}")
-    public void i_continue_to_add_watcher(String watcher_newKey, String workspace_id) {
-        miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(workspace_id, watcher_newKey));
-        miniTaskActions.editTask(workspace_id, miniTaskObject, getTaskId());
+    @When("I continue to add watcher {string}")
+    public void i_continue_to_add_watcher(String watcher_newKey) {
+        miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(watcher_newKey));
+        miniTaskActions.editTask(miniTaskObject, getTaskId());
     }
 
-    @When("I want to view the task detail {string}")
-    public void i_want_to_view_the_task_detail(String workspace_id) {
-        String res = miniTaskActions.viewTaskDetail(getTaskId(), workspace_id).asString();
+    @When("I want to view the task detail")
+    public void i_want_to_view_the_task_detail() {
+        String res = miniTaskActions.viewTaskDetail(getTaskId()).asString();
         miniTaskResponse = JsonPath.with(res).getObject("data", MiniTaskResponse.class);
     }
 
-    @When("I delete the task {string}")
-    public void i_delete_the_task(String workspace_id) {
-        miniTaskActions.deleteTask(workspace_id, getTaskId());
+    @When("I get the task list")
+    public void i_get_the_task_list() {
+        task_ids = miniTaskActions.getTaskList();
+    }
+
+    @When("I delete the task")
+    public void i_delete_the_task() {
+        miniTaskActions.deleteTask(getTaskId());
+    }
+
+    @When("I delete all tasks")
+    public void i_delete_all_tasks() {
+        for (String id : task_ids) {
+            miniTaskActions.deleteTask(id);
+        }
     }
 
     @And("Check the task title {string}")

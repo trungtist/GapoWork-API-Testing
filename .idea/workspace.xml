@@ -4,12 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update tc04">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" afterDir="false" />
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update tc05 and add file">
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/Base.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/post/PostObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/post/PostActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/PostSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/aplication-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/post.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/AccountConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/AccountConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberUpload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/SearchActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/SearchActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/task.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/auth.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/upload.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/upload.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/serenity.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +91,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features" />
       <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features\miniTaskService" />
+      <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Create and edit with assignee and watcher">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Create and update post with text content">
     <configuration name="Scenario: Create and edit task with attachment files" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" />
@@ -118,26 +136,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Create and edit task with priority, status" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" />
-      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Create and edit task with priority\, status$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit task with priority\, status$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Create and edit task with priority, status" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scenario: Create and edit with assignee and watcher" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTask.feature" />
@@ -158,15 +156,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Login with email and password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Create and update post with text content" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth.feature" />
-      <option name="GLUE" value="gapowork.testSteps net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/post.feature" />
+      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Login with email and password$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login with email and password$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Login with email and password" />
+      <option name="NAME_FILTER" value="^Create and update post with text content$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and update post with text content$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and update post with text content" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Delete all tasks" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" />
+      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GapoWork-API-Testing" />
+      <option name="NAME_FILTER" value="^Delete all tasks$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Delete all tasks$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Delete all tasks" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -180,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Create and update post with text content" />
+        <item itemvalue="Cucumber Java.Scenario: Delete all tasks" />
         <item itemvalue="Cucumber Java.Scenario: Create and edit with assignee and watcher" />
         <item itemvalue="Cucumber Java.Scenario: Create and edit task with due date" />
         <item itemvalue="Cucumber Java.Scenario: Create and edit task with attachment files" />
-        <item itemvalue="Cucumber Java.Scenario: Create and edit task with priority, status" />
-        <item itemvalue="Cucumber Java.Scenario: Login with email and password" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704279059445</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update tc05 and add file">
+      <option name="closed" value="true" />
+      <created>1704299784279</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704299784279</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -254,7 +280,8 @@
     <MESSAGE value="update tc 03 minitask" />
     <MESSAGE value="add datas" />
     <MESSAGE value="update tc04" />
-    <option name="LAST_COMMIT_MESSAGE" value="update tc04" />
+    <MESSAGE value="update tc05 and add file" />
+    <option name="LAST_COMMIT_MESSAGE" value="update tc05 and add file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

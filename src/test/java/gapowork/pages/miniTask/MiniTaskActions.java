@@ -10,12 +10,13 @@ import java.util.List;
 
 import static gapowork.constants.UrlConstants.*;
 import static gapowork.helper.Helper.*;
+import static gapowork.hook.Base.workspace_id;
 import static gapowork.pages.auth.AuthActions.access_token;
 
 public class MiniTaskActions {
 
     @Step("Create task")
-    public void createTask (String workspace_id, MiniTaskObject body) {
+    public void createTask (MiniTaskObject body) {
         SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
@@ -27,7 +28,7 @@ public class MiniTaskActions {
     }
 
     @Step("Edit task")
-    public void editTask (String workspace_id, Object body, String task_id) {
+    public void editTask (Object body, String task_id) {
         SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
@@ -40,7 +41,7 @@ public class MiniTaskActions {
     }
 
     @Step("Delete task")
-    public void deleteTask(String workspace_id, String task_id) {
+    public void deleteTask(String task_id) {
         SerenityRest.given().contentType(ContentType.JSON)
                 .auth().oauth2(access_token)
                 .pathParam("taskId", task_id)
@@ -52,8 +53,8 @@ public class MiniTaskActions {
     }
 
     @Step("View task detail")
-    public Response viewTaskDetail (String task_id, String workspace_id) {
-        shortWait();
+    public Response viewTaskDetail (String task_id) {
+//        shortWait();
         return SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
@@ -65,7 +66,7 @@ public class MiniTaskActions {
     }
 
     @Step("Get task list")
-    public List<String> getTaskList (String workspace_id) {
+    public List<String> getTaskList () {
         Response res = SerenityRest
                 .given()
                 .contentType(ContentType.JSON)

@@ -7,6 +7,7 @@ import net.serenitybdd.rest.SerenityRest;
 
 import java.io.File;
 
+import static gapowork.constants.UrlConstants.UPLOAD_FILE_URL;
 import static gapowork.pages.auth.AuthActions.access_token;
 
 public class UploadActions {
@@ -19,7 +20,7 @@ public class UploadActions {
                 .auth().oauth2(access_token)
                 .when()
                 .multiPart("file", file)
-                .post("https://upload.gapowork.vn/media/v1.0/files")
+                .post(UPLOAD_FILE_URL)
                 .then()
                 .extract().response();
     }

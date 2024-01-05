@@ -86,7 +86,7 @@ public class AuthActions {
         body.put("trusted_device", false);
         body.put("password", passwordSHA);
 
-        Response res = SerenityRest
+        SerenityRest
                 .given()
                 .header("Content-Type", "application/json")
                 .when()
@@ -94,8 +94,5 @@ public class AuthActions {
                 .post("https://api.gapowork.vn/auth/v3.0/login")
                 .then()
                 .extract().response();
-
-        user_id = res.path("data.user_id");
-        access_token = res.path("data.access_token");
     }
 }

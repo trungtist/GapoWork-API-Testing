@@ -7,11 +7,12 @@ import net.serenitybdd.rest.SerenityRest;
 import java.util.List;
 
 import static gapowork.constants.UrlConstants.SEARCH_USER_IN_WORKSPACE;
+import static gapowork.hook.Base.workspace_id;
 import static gapowork.pages.auth.AuthActions.access_token;
 
 public class SearchActions {
 
-    public List<Integer> searchUserInWorkspace (String workspace_id, String key) {
+    public List<Integer> searchUserInWorkspace (String key) {
         Response res = SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
