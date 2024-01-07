@@ -15,6 +15,11 @@ public class Helper {
         TimeUnit.SECONDS.sleep(2);
     }
 
+    @SneakyThrows
+    public static void longWait() {
+        TimeUnit.SECONDS.sleep(5);
+    }
+
     public static long getTimestamp () {
         return System.currentTimeMillis();
     }

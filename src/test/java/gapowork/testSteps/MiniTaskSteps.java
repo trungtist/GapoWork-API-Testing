@@ -75,7 +75,7 @@ public class MiniTaskSteps {
     public void i_add_a_assignee(String assignee_key) {
         miniTaskObject.setAssignees(searchActions.searchUserInWorkspace(assignee_key));
     }
-    @And("I add a watcher {string}, {string}")
+    @And("I add a watcher {string}")
     public void i_add_a_watcher(String watcher_key) {
         miniTaskObject.setWatchers(searchActions.searchUserInWorkspace(watcher_key));
     }
