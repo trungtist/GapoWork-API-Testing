@@ -68,12 +68,38 @@ Feature: Check Post API
 
   @post_background
   Scenario Outline: Create post with background
+    When I create post with background "<content>", "<type>", privacy <privacy> and target "<target>"
+    Then Check create successfully <createdStatus>
+    And Check message "<createdMessage>"
+    When I want to view the post detail
+    Then Check status successfully <successStatus>
+    And Check the background post
+    When I update post with new background "<contentEdit>", "<type>"
+    Then Check status successfully <successStatus>
+    When I want to view the post detail
+    Then Check status successfully <successStatus>
+    And Check the background post
+    When I delete the post
+    Then Check status successfully <successStatus>
+    And Check message "<deletedMessage>"
 
     Examples:
+      | content                                        | type       | privacy | target | contentEdit                     | createdMessage          | createdStatus | successStatus | deletedMessage          |
+      | Automation content with background #background | background | 5       | user:  | Edit content background #editBg | Tạo bài viết thành công | 201           | 200           | Xóa bài viết thành công |
 
-  @post_mention
-  Scenario Outline: Create post with mention
+  @post_invalidBackground
+  Scenario Outline: Create post with invalid background
+    When I create post with background "<content>", "<type>", privacy <privacy> and target "<target>"
+    Then Check for incorrect precondition <preconditionFailedStatus>
+    And Check message "<message>"
 
     Examples:
+      | content            | type       | privacy | target | preconditionFailedStatus | message               |
+      | Invalid background | background | 5       | user:  | 412                      | Tham số không hợp lệ. |
 
-  @post
+  @get_background
+  Scenario: Get background post
+    When Get bg
+    Then Check status successfully 200
+
+

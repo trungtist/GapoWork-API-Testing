@@ -30,7 +30,7 @@ public interface UrlConstants {
     String UPDATE_POST_URL = "/post/v1.0/posts/{id}";
     String GET_POST_DETAIL_URL = "/post/v1.0/posts/{id}";
     String DELETE_POST_URL = "/post/v1.0/posts/{id}";
-    String GET_BACKGROUND_POST_URL = "post/background";
+    String GET_BACKGROUND_POST_URL = "/sticker/v1.3/post/background";
 
     // Group service
     String GET_GROUP_LIST_URL = "/group/v1.1/groups";

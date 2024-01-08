@@ -4,26 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update git ignore">
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberUpload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/BackgroundObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/ImageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/MediaObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/media/VideoObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/post/PostVerify.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/group/GroupActions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/UploadSteps.java" afterDir="false" />
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update post service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/helper/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/post/PostObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/models/post/PostObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/media/UploadActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/models/post/PostVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/post/PostVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/post/PostActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/post/PostActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/PostSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/PostSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/post.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/post.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/upload.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/upload.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +83,7 @@
       <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Check upload media">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Create post with background">
     <configuration name="Scenario: Check upload media" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/upload.feature" />
@@ -115,15 +104,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Create and update post with text content" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Create post with background" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/post.feature" />
       <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Create and update post with text content$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and update post with text content$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Create and update post with text content" />
+      <option name="NAME_FILTER" value="^Create post with background$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create post with background$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create post with background" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -175,15 +164,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Delete all tasks" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Get background post" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/post.feature" />
       <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Delete all tasks$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Delete all tasks$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Delete all tasks" />
+      <option name="NAME_FILTER" value="^Get background post$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Get background post$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Get background post" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -197,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Create post with background" />
+        <item itemvalue="Cucumber Java.Scenario: Get background post" />
         <item itemvalue="Cucumber Java.Scenario: Check upload media" />
         <item itemvalue="Cucumber Java.Scenario: Create post with medias" />
         <item itemvalue="Cucumber Java.Scenario: Create post with incorrect input" />
-        <item itemvalue="Cucumber Java.Scenario: Create and update post with text content" />
-        <item itemvalue="Cucumber Java.Scenario: Delete all tasks" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704451857747</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update post service">
+      <option name="closed" value="true" />
+      <created>1704645011040</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704645011040</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -298,7 +295,8 @@
     <MESSAGE value="update tc05 and add file" />
     <MESSAGE value="add post service" />
     <MESSAGE value="update git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update git ignore" />
+    <MESSAGE value="update post service" />
+    <option name="LAST_COMMIT_MESSAGE" value="update post service" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -32,12 +32,14 @@ public @Data class PostObject {
     }
 
     // Object for update post
-    public PostObject(String id, String content, Integer privacy) {
+    public PostObject(String id, String content, List<MediaObject> media, Integer privacy) {
         this.id = id;
         this.content = content;
+        this.media = media;
         this.privacy = privacy;
     }
 
     public PostObject() {
     }
+
 }
