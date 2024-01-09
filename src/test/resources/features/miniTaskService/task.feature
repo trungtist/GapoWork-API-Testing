@@ -1,4 +1,4 @@
-@miniTask
+@task
 Feature: Check Mini Task API - Task
 
 # priority

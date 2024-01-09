@@ -5,11 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import gapowork.models.media.AttachmentFileObject;
 import lombok.Data;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public @Data class MiniTaskResponse {
+public @Data class TaskResponse {
     @JsonProperty("id")
     private String taskId;
     @JsonProperty("workspace_id")

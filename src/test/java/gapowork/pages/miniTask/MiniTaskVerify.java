@@ -3,8 +3,10 @@ package gapowork.pages.miniTask;
 import net.serenitybdd.annotations.Step;
 import org.assertj.core.api.Assertions;
 
-import java.sql.Timestamp;
 import java.util.List;
+
+import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class MiniTaskVerify {
 
@@ -55,4 +57,10 @@ public class MiniTaskVerify {
         Assertions.assertThat(actualAtfs).isEqualTo(expectantAtf);
         return this;
     }
+
+    @Step("Verify project name")
+    public void verifyProjectName (String expectantProjectName) {
+        restAssuredThat(response -> response.body("data.name", equalTo(expectantProjectName)));
+    }
+
 }

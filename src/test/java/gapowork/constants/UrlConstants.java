@@ -7,15 +7,17 @@ public interface UrlConstants {
     String LOGIN_URL = "/auth/v3.0/login";
 
     // Mini task service
+    String CREATE_PROJECT_URL = "/mini-task/v1.0/projects";
+    String EDIT_PROJECT_URL = "/mini-task/v1.0/projects/{projectId}";
+    String GET_PROJECT_INFO_URL = "/mini-task/v1.0/projects/{projectId}";
+    String DELETE_PROJECT_URL = "/mini-task/v1.0/projects/{projectId}";
+
     String CREATE_TASK_URL = "/mini-task/v1.0/tasks";
-
     String GET_TASK_LIST_URL = "/mini-task/v1.0/tasks";
-
     String EDIT_TASK_URL = "/mini-task/v1.0/tasks/{taskId}";
-
     String VIEW_TASK_DETAIL_URL = "/mini-task/v1.0/tasks/{taskId}";
-
     String DELETE_TASK_URL = "/mini-task/v1.0/tasks/{taskId}";
+
 
     // Upload service
     String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/files";
@@ -24,6 +26,9 @@ public interface UrlConstants {
 
     // Search service
     String SEARCH_USER_IN_WORKSPACE = "/search/v2.0/search-user-invite-workspace";
+    String SEARCH_CHAT_CONVERSATION_URL = "/search/v2.0/search-chat-conversations";
+    String SEARCH_DEPARTMENT_URL = "/search/v2.0/search-department";
+    String SEARCH_ROLE_URL = "/search/v2.0/search-role";
 
     // Post service
     String CREATE_POST_URL = "/post/v1.0/posts";

@@ -5,12 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import gapowork.models.media.AttachmentFileObject;
 import lombok.Data;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public @Data class MiniTaskObject {
+public @Data class TaskObject {
     @JsonProperty("title")
     private String title;
 
@@ -35,9 +33,9 @@ public @Data class MiniTaskObject {
     @JsonProperty("attachment_files")
     private List<AttachmentFileObject> attachment_files;
 
-    public MiniTaskObject(String title,
-                          String description, List<Integer> assignees,
-                          List<Integer> watchers, Long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
+    public TaskObject(String title,
+                      String description, List<Integer> assignees,
+                      List<Integer> watchers, Long due_date, int status, int priority, List<AttachmentFileObject> attachment_files) {
         this.title = title;
         this.description = description;
         this.assignees = assignees;
@@ -48,7 +46,8 @@ public @Data class MiniTaskObject {
         this.attachment_files = attachment_files;
     }
 
-    public MiniTaskObject() {
+    public TaskObject() {
+
     }
 }
 

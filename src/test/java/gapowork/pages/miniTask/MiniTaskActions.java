@@ -1,6 +1,7 @@
 package gapowork.pages.miniTask;
 
-import gapowork.models.miniTask.MiniTaskObject;
+import gapowork.models.miniTask.ProjectObject;
+import gapowork.models.miniTask.TaskObject;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import net.serenitybdd.annotations.Step;
@@ -16,7 +17,7 @@ import static gapowork.pages.auth.AuthActions.access_token;
 public class MiniTaskActions {
 
     @Step("Create task")
-    public void createTask (MiniTaskObject body) {
+    public void createTask(TaskObject body) {
         SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
@@ -28,7 +29,7 @@ public class MiniTaskActions {
     }
 
     @Step("Edit task")
-    public void editTask (Object body, String task_id) {
+    public void editTask(Object body, String task_id) {
         SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
@@ -53,7 +54,7 @@ public class MiniTaskActions {
     }
 
     @Step("View task detail")
-    public Response viewTaskDetail (String task_id) {
+    public Response viewTaskDetail(String task_id) {
 //        shortWait();
         return SerenityRest
                 .given()
@@ -66,7 +67,7 @@ public class MiniTaskActions {
     }
 
     @Step("Get task list")
-    public List<String> getTaskList () {
+    public List<String> getTaskList() {
         Response res = SerenityRest
                 .given()
                 .contentType(ContentType.JSON)
@@ -78,15 +79,53 @@ public class MiniTaskActions {
         return res.path("data.id");
     }
 
-//    @SneakyThrows
-//    @Step("Get data after uploaded file")
-//    public AttachmentFileObject dataUploadFile (String url) {
-//        Response res = UploadActions.uploadFile(url);
-//        FileObject fileObject = res.jsonPath().getObject("", FileObject.class);
-//        AttachmentFileObject attachmentFileObject = new AttachmentFileObject();
-//        PropertyUtils.copyProperties(attachmentFileObject, fileObject);
-//
-//        return attachmentFileObject;
-//    }
+    @Step("Create project")
+    public void createProject(ProjectObject body) {
+        SerenityRest
+                .given()
+                .contentType(ContentType.JSON)
+                .auth().oauth2(access_token)
+                .header("x-gapo-workspace-id", workspace_id)
+                .when()
+                .body(body)
+                .post(CREATE_PROJECT_URL);
+    }
+
+    @Step("Edit project")
+    public void editProject(ProjectObject body, String project_id) {
+        SerenityRest
+                .given()
+                .contentType(ContentType.JSON)
+                .auth().oauth2(access_token)
+                .header("x-gapo-workspace-id", workspace_id)
+                .pathParam("projectId", project_id)
+                .when()
+                .body(body)
+                .patch(EDIT_PROJECT_URL);
+    }
+
+    @Step("Get project info")
+    public Response getProjectInfo(String project_id) {
+        return SerenityRest
+                .given()
+                .contentType(ContentType.JSON)
+                .auth().oauth2(access_token)
+                .header("x-gapo-workspace-id", workspace_id)
+                .pathParam("projectId", project_id)
+                .when()
+                .get(GET_PROJECT_INFO_URL);
+    }
+
+    @Step("Delete project")
+    public void deleteProject(String project_id) {
+        SerenityRest
+                .given()
+                .contentType(ContentType.JSON)
+                .auth().oauth2(access_token)
+                .header("x-gapo-workspace-id", workspace_id)
+                .pathParam("projectId", project_id)
+                .when()
+                .delete(DELETE_PROJECT_URL);
+    }
 
 }
