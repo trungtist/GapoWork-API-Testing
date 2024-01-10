@@ -19,7 +19,7 @@ public class HookCucumberMiniTask extends Base {
     AuthActions authActions = new AuthActions();
     EnvironmentVariables env;
 
-    @Before("@task or @project")
+    @Before("@task or @project or @taskList")
     public void user_login_on_gapowork(Scenario scenario) throws InterruptedException, AWTException {
         RestAssured.baseURI = EnvironmentSpecificConfiguration.from(env).getProperty("base.url");
 

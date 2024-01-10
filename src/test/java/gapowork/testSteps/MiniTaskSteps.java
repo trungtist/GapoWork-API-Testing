@@ -240,10 +240,48 @@ public class MiniTaskSteps {
     ProjectObject projectObject = new ProjectObject();
     List<Integer> user_ids;
     List<String> thread_ids;
+    List<String> department_ids;
+    List<String> role_ids;
     String[] key;
 
     public static String getProjectId() {
         return Serenity.sessionVariableCalled("projectId");
+    }
+
+    @When("I add members {string}")
+    public void i_add_members(String member_key) {
+        user_ids = new ArrayList<>();
+        key = Helper.splitStringToList(member_key);
+        for (String k : key) {
+            user_ids.addAll(searchActions.searchUserInWorkspace(k));
+        }
+    }
+
+    @When("I add threads {string}")
+    public void i_add_threads(String thread_key) {
+        thread_ids = new ArrayList<>();
+        key = Helper.splitStringToList(thread_key);
+        for (String k : key) {
+            thread_ids.addAll(searchActions.searchChatConversation(k));
+        }
+    }
+
+    @When("I add departments {string}")
+    public void i_add_departments(String department_key) {
+        department_ids = new ArrayList<>();
+        key = Helper.splitStringToList(department_key);
+        for (String k : key) {
+            department_ids.addAll(searchActions.searchDepartment(k));
+        }
+    }
+
+    @When("I add roles {string}")
+    public void i_add_roles(String role_key) {
+        role_ids = new ArrayList<>();
+        key = Helper.splitStringToList(role_key);
+        for (String k : key) {
+            role_ids.addAll(searchActions.searchRole(k));
+        }
     }
 
     @When("I create a project with just name {string}")
@@ -254,41 +292,29 @@ public class MiniTaskSteps {
         Serenity.setSessionVariable("projectId").to(lastResponse().body().path("data.id"));
     }
 
-    @When("I create a project with members {string}, {string}, {string}")
-    public void i_create_a_project_with_members(String project_name, String member_type, String member_key) {
+    @When("I create a project with members {string}, {string}")
+    public void i_create_a_project_with_members(String project_name, String member_type) {
         switch (member_type) {
             case "member":
-                user_ids = new ArrayList<>();
-                key = Helper.splitStringToList(member_key);
-                for (String k : key) {
-                    user_ids.addAll(searchActions.searchUserInWorkspace(k));
-                }
                 projectObject = new ProjectObject(project_name, user_ids, Collections.emptyList(), Collections.emptyList(), Collections.emptyList());
                 miniTaskActions.createProject(projectObject);
                 break;
             case "thread":
-                thread_ids = new ArrayList<>();
-                key = Helper.splitStringToList(member_key);
-                for (String k : key) {
-                    thread_ids.addAll(searchActions.searchChatConversation(k));
-                }
                 projectObject = new ProjectObject(project_name, Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), thread_ids);
                 miniTaskActions.createProject(projectObject);
                 break;
             case "department":
-                projectObject.setDepartment_ids(searchActions.searchDepartment(member_key));
-                projectObject = new ProjectObject(project_name, Collections.emptyList(), projectObject.getDepartment_ids(), Collections.emptyList(), Collections.emptyList());
+                projectObject = new ProjectObject(project_name, Collections.emptyList(), department_ids, Collections.emptyList(), Collections.emptyList());
                 miniTaskActions.createProject(projectObject);
                 break;
             case "role":
-                projectObject.setRole_ids(searchActions.searchRole(member_key));
-                projectObject = new ProjectObject(project_name, Collections.emptyList(), Collections.emptyList(), projectObject.getRole_ids(), Collections.emptyList());
+                projectObject = new ProjectObject(project_name, Collections.emptyList(), Collections.emptyList(), role_ids, Collections.emptyList());
                 miniTaskActions.createProject(projectObject);
                 break;
             default:
-                projectObject = new ProjectObject(project_name, user_ids, projectObject.getDepartment_ids(), projectObject.getRole_ids(), thread_ids);
+                projectObject = new ProjectObject(project_name, user_ids, department_ids, role_ids, thread_ids);
+                miniTaskActions.createProject(projectObject);
                 break;
-
         }
 
         Serenity.setSessionVariable("projectId").to(lastResponse().body().path("data.id"));
@@ -322,4 +348,41 @@ public class MiniTaskSteps {
         miniTaskActions.deleteProject(getProjectId());
     }
 
+    //  ------------------------ FOLDER ------------------------   //
+    public static String getFolderId () { return Serenity.sessionVariableCalled("folderId").toString(); }
+    public static String getDuplicatedFolderId () { return Serenity.sessionVariableCalled("duplicatedFolderId").toString(); }
+
+    @When("I create a folder {string}")
+    public void i_create_a_folder(String folder_name) {
+        miniTaskActions.createFolder(folder_name, getProjectId());
+
+        Serenity.setSessionVariable("folderId").to(lastResponse().body().path("data.id"));
+    }
+
+    @When("I edit the folder name {string}")
+    public void i_edit_the_folder_name(String folderName_edit) {
+        miniTaskActions.editFolder(folderName_edit, getFolderId());
+    }
+
+    @When("I duplicate the folder")
+    public void i_duplicate_the_folder() {
+        miniTaskActions.duplicateFolder(getFolderId());
+
+        Serenity.setSessionVariable("duplicatedFolderId").to(lastResponse().body().path("data.id"));
+    }
+
+    @When("I delete the folder")
+    public void i_delete_the_folder() {
+        miniTaskActions.deleteFolder(getDuplicatedFolderId());
+    }
+
+    @And("Check the folder name {string}")
+    public void check_the_folder_name(String expectant_folderName) {
+        miniTaskVerify.verifyFolderName(expectant_folderName);
+    }
+
+    @And("Check the duplicated folder id")
+    public void check_the_duplicated_folder_id() {
+        restAssuredThat(response -> response.body("data.id", equalTo(getDuplicatedFolderId())));
+    }
 }

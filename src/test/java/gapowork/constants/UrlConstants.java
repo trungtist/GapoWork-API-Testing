@@ -18,6 +18,10 @@ public interface UrlConstants {
     String VIEW_TASK_DETAIL_URL = "/mini-task/v1.0/tasks/{taskId}";
     String DELETE_TASK_URL = "/mini-task/v1.0/tasks/{taskId}";
 
+    String CREATE_FOLDER_URL = "/mini-task/v1.0/folders";
+    String EDIT_FOLDER_URL = "/mini-task/v1.0/folders/{folderId}";
+    String DELETE_FOLDER_URL = "/mini-task/v1.0/folders/{folderId}";
+    String DUPLICATE_FOLDER_URL = "/mini-task/v1.0/folders/{folderId}/duplicate";
 
     // Upload service
     String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/files";
