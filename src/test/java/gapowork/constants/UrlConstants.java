@@ -10,6 +10,7 @@ public interface UrlConstants {
     String CREATE_PROJECT_URL = "/mini-task/v1.0/projects";
     String EDIT_PROJECT_URL = "/mini-task/v1.0/projects/{projectId}";
     String GET_PROJECT_INFO_URL = "/mini-task/v1.0/projects/{projectId}";
+    String GET_PROJECT_LIST_URL = "/mini-task/v1.0/projects";
     String DELETE_PROJECT_URL = "/mini-task/v1.0/projects/{projectId}";
 
     String CREATE_TASK_URL = "/mini-task/v1.0/tasks";
@@ -22,6 +23,11 @@ public interface UrlConstants {
     String EDIT_FOLDER_URL = "/mini-task/v1.0/folders/{folderId}";
     String DELETE_FOLDER_URL = "/mini-task/v1.0/folders/{folderId}";
     String DUPLICATE_FOLDER_URL = "/mini-task/v1.0/folders/{folderId}/duplicate";
+
+    String CREATE_TASK_LIST_URL = "/mini-task/v1.0/task-lists";
+    String EDIT_TASK_LIST_URL = "/mini-task/v1.0/task-lists/{taskListId}";
+    String DUPLICATE_TASK_LIST_URL = "/mini-task/v1.0/task-lists/{taskListId}/duplicate";
+    String DELETE_TASK_LIST_URL = "/mini-task/v1.0/task-lists/{taskListId}";
 
     // Upload service
     String UPLOAD_FILE_URL = "https://upload.gapowork.vn/media/v1.0/files";

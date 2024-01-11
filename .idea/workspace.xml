@@ -12,6 +12,8 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/serenity.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +85,7 @@
       <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Create folder after create project">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Create and duplicate task list in folder or outside folder">
     <configuration name="Scenario: Create a project with member" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" />
@@ -104,15 +106,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Create and edit project with name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Create and duplicate task list in folder or outside folder" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" />
       <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Create and edit project with name$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit project with name$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Create and edit project with name" />
+      <option name="NAME_FILTER" value="^Create and duplicate task list in folder or outside folder$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and duplicate task list in folder or outside folder$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and duplicate task list in folder or outside folder" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Create and edit task list in folder or outside folder" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" />
+      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GapoWork-API-Testing" />
+      <option name="NAME_FILTER" value="^Create and edit task list in folder or outside folder$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create and edit task list in folder or outside folder$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and edit task list in folder or outside folder" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -133,26 +155,6 @@
       <option name="NAME_FILTER" value="^Create folder after create project$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create folder after create project$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: Create folder after create project" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Create project with name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" />
-      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^Create project with name$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create project with name$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Create project with name" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -186,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Create and duplicate task list in folder or outside folder" />
+        <item itemvalue="Cucumber Java.Scenario: Create and edit task list in folder or outside folder" />
         <item itemvalue="Cucumber Java.Scenario: Create folder after create project" />
         <item itemvalue="Cucumber Java.Scenario: Create a project with member" />
         <item itemvalue="Cucumber Java.Scenario: I create a project with member" />
-        <item itemvalue="Cucumber Java.Scenario: Create and edit project with name" />
-        <item itemvalue="Cucumber Java.Scenario: Create project with name" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704822130935</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update project feature">
+      <option name="closed" value="true" />
+      <created>1704859474198</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704859474198</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

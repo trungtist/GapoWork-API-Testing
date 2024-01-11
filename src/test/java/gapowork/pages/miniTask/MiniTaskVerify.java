@@ -68,4 +68,9 @@ public class MiniTaskVerify {
         restAssuredThat(response -> response.body("data.name", equalTo(expectantFolderName)));
     }
 
+    @Step("Verify task list name")
+    public void verifyTaskListName (String expectantTaskListName) {
+        restAssuredThat(response -> response.body("data.name", equalTo(expectantTaskListName)));
+    }
+
 }

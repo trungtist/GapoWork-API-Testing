@@ -1,6 +1,7 @@
 package gapowork.hook;
 
 import gapowork.pages.auth.AuthActions;
+import gapowork.pages.miniTask.MiniTaskActions;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.restassured.RestAssured;
@@ -17,7 +18,9 @@ public class HookCucumberMiniTask extends Base {
 
     @Steps
     AuthActions authActions = new AuthActions();
+    MiniTaskActions miniTaskActions = new MiniTaskActions();
     EnvironmentVariables env;
+    public static String project_id;
 
     @Before("@task or @project or @taskList")
     public void user_login_on_gapowork(Scenario scenario) throws InterruptedException, AWTException {
@@ -27,6 +30,7 @@ public class HookCucumberMiniTask extends Base {
             super.CallEnvValue();
             authActions.loginWithEmailAndPassword(EMAIL, PASSWORD);
             beforeFeature = true;
+            project_id = miniTaskActions.getProjectIdFromProjectList();
             System.out.println("BEFORE HOOK MINI TASK");
         }
     }

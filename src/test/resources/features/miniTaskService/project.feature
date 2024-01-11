@@ -21,7 +21,7 @@ Feature: Check Mini Task API - Project
       | Automation project name | Automation edit project name | 200           |
 
   @project_invalidName
-  Scenario Outline: Create and edit project with invalid name
+  Scenario Outline: Create project with invalid name
     When I create a project with just name "<invalidName>"
     Then Check for invalid status <failStatus>
 
@@ -43,7 +43,7 @@ Feature: Check Mini Task API - Project
 
     Examples:
       | name                            | memberType | memberKey | successStatus |
-      | Automation project with members | member     | a,b,c,d   | 200           |
+      | Automation project with members | member     | d,e,f,g   | 200           |
 
   @project_addThread
   Scenario Outline: Create a project with thread
@@ -117,8 +117,8 @@ Feature: Check Mini Task API - Project
 
   @project_createFolder
   Scenario Outline: Create folder after create project
-    When I create a project with just name "<projectName>"
-    Then Check status successfully <successStatus>
+#    When I create a project with just name "<projectName>"
+#    Then Check status successfully <successStatus>
     When I create a folder "<folderName>"
     Then Check status successfully <successStatus>
     And Check the folder name "<folderName>"

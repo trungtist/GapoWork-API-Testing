@@ -21,6 +21,7 @@ import net.serenitybdd.core.Serenity;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static gapowork.hook.HookCucumberMiniTask.project_id;
 import static net.serenitybdd.rest.SerenityRest.lastResponse;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.*;
@@ -349,12 +350,17 @@ public class MiniTaskSteps {
     }
 
     //  ------------------------ FOLDER ------------------------   //
-    public static String getFolderId () { return Serenity.sessionVariableCalled("folderId").toString(); }
-    public static String getDuplicatedFolderId () { return Serenity.sessionVariableCalled("duplicatedFolderId").toString(); }
+    public static String getFolderId() {
+        return Serenity.sessionVariableCalled("folderId").toString();
+    }
+
+    public static String getDuplicatedFolderId() {
+        return Serenity.sessionVariableCalled("duplicatedFolderId").toString();
+    }
 
     @When("I create a folder {string}")
     public void i_create_a_folder(String folder_name) {
-        miniTaskActions.createFolder(folder_name, getProjectId());
+        miniTaskActions.createFolder(folder_name, project_id);
 
         Serenity.setSessionVariable("folderId").to(lastResponse().body().path("data.id"));
     }
@@ -384,5 +390,54 @@ public class MiniTaskSteps {
     @And("Check the duplicated folder id")
     public void check_the_duplicated_folder_id() {
         restAssuredThat(response -> response.body("data.id", equalTo(getDuplicatedFolderId())));
+    }
+
+    //  ------------------------ TASK LIST ------------------------   //
+    public static String getTaskListId() {
+        return Serenity.sessionVariableCalled("taskListId").toString();
+    }
+
+    public static String getDuplicatedTaskList() {
+        return Serenity.sessionVariableCalled("duplicatedTaskListId").toString();
+    }
+
+    @When("I create a task list {string}, {string}")
+    public void i_create_a_task_list(String taskList_name, String in_folder) {
+        if (in_folder.equals("Yes")) {
+            miniTaskActions.createFolder("New folder", project_id);
+            Serenity.setSessionVariable("folderId").to(lastResponse().jsonPath().getString("data.id"));
+            miniTaskActions.createTaskList(taskList_name, project_id, getFolderId());
+        } else {
+            miniTaskActions.createTaskList(taskList_name, project_id, null);
+        }
+
+        Serenity.setSessionVariable("taskListId").to(lastResponse().body().path("data.id"));
+    }
+
+    @When("I edit the task list {string}, {string}, {string}")
+    public void i_edit_the_task_list(String taskListName_edit, String description, String content_rtf) {
+        miniTaskActions.editTaskList(getTaskListId(), taskListName_edit, description, content_rtf);
+    }
+
+    @When("I duplicate the task list")
+    public void i_duplicate_the_task_list() {
+        miniTaskActions.duplicateTaskList(getTaskListId());
+
+        Serenity.setSessionVariable("duplicatedTaskListId").to(lastResponse().body().path("data.id"));
+    }
+
+    @When("I delete the task list")
+    public void i_delete_the_task_list() {
+        miniTaskActions.deleteTaskList(getTaskListId());
+    }
+
+    @And("Check the task list name {string}")
+    public void check_the_task_list_name(String expectantTaskListName) {
+        miniTaskVerify.verifyTaskListName(expectantTaskListName);
+    }
+
+    @Then("Check the duplicated task list")
+    public void check_the_duplicated_task_list() {
+        restAssuredThat(response -> response.body("data.id", equalTo(getDuplicatedTaskList())));
     }
 }
