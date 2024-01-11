@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static gapowork.constants.UrlConstants.*;
 import static gapowork.helper.Helper.*;
-import static gapowork.hook.Base.workspace_id;
+import static gapowork.hook.HookCucumberMiniTask.workspace_id;
 import static gapowork.pages.auth.AuthActions.access_token;
 
 public class MiniTaskActions {

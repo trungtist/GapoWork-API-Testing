@@ -21,13 +21,16 @@ public class HookCucumberMiniTask extends Base {
     MiniTaskActions miniTaskActions = new MiniTaskActions();
     EnvironmentVariables env;
     public static String project_id;
+    public static String workspace_id;
+
 
     @Before("@task or @project or @taskList")
     public void user_login_on_gapowork(Scenario scenario) throws InterruptedException, AWTException {
         RestAssured.baseURI = EnvironmentSpecificConfiguration.from(env).getProperty("base.url");
 
         if (!beforeFeature) {
-            super.CallEnvValue();
+//            super.CallEnvValue();
+            workspace_id = EnvironmentSpecificConfiguration.from(env).getProperty("workspace.id");
             authActions.loginWithEmailAndPassword(EMAIL, PASSWORD);
             beforeFeature = true;
             project_id = miniTaskActions.getProjectIdFromProjectList();

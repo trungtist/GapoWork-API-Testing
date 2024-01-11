@@ -53,10 +53,10 @@ Feature: Check Mini Task API - Task
     And   Check the task title "<title>"
     And   Check the task priority <priorityEdit>
     And   Check the task status <statusEdit>
-#    When  I delete the task
-#    Then  Check status successfully <successStatus>
-#    When  I want to view the task detail
-#    Then  Check for invalid status <failStatus>
+    When  I delete the task
+    Then  Check status successfully <successStatus>
+    When  I want to view the task detail
+    Then  Check for invalid status <failStatus>
 
     Examples:
       | title                            | workspace_id    | priority | status | priorityEdit | statusEdit | successStatus  |  failStatus  |
@@ -80,10 +80,10 @@ Feature: Check Mini Task API - Task
     Then  Check status successfully <successStatus>
     And   Check the task title "<title>"
     And  Check the task has attachments "<new_name>"
-#    When  I delete the task
-#    Then  Check status successfully <successStatus>
-#    When  I want to view the task detail
-#    Then  Check for invalid status <failStatus>
+    When  I delete the task
+    Then  Check status successfully <successStatus>
+    When  I want to view the task detail
+    Then  Check for invalid status <failStatus>
 
     Examples:
       | title                            | workspace_id    | url                                                                     | name                 | new_url                                                                 | new_name                                   | successStatus | failStatus  |
@@ -103,10 +103,10 @@ Feature: Check Mini Task API - Task
     When I want to view the task detail
     And Check the task title "<title>"
     And Check the task due date
-#    When  I delete the task
-#    Then  Check status successfully <successStatus>
-#    When  I want to view the task detail
-#    Then  Check for invalid status <failStatus>
+    When  I delete the task
+    Then  Check status successfully <successStatus>
+    When  I want to view the task detail
+    Then  Check for invalid status <failStatus>
 
     Examples:
       | title                         | workspace_id    | successStatus | failStatus |
@@ -131,10 +131,10 @@ Feature: Check Mini Task API - Task
     And Check the task title "<title>"
     Then Check the task has assignee from id
     And Check the task has watcher from id
-#    When  I delete the task
-#    Then  Check status successfully <successStatus>
-#    When  I want to view the task detail
-#    Then  Check for invalid status <failStatus>
+    When  I delete the task
+    Then  Check status successfully <successStatus>
+    When  I want to view the task detail
+    Then  Check for invalid status <failStatus>
 
     Examples:
       | title                                     | workspace_id    | assignee_key | watcher_key | assignee_newKey | watcher_newKey  |successStatus | failStatus  |
@@ -160,10 +160,10 @@ Feature: Check Mini Task API - Task
     And Check the task has attachments "<file_name>"
     And Check the task has assignee from id
     And Check the task has watcher from id
-#    When I delete the task
-#    Then Check status successfully <successStatus>
-#    When I want to view the task detail
-#    Then Check for invalid status <failStatus>
+    When I delete the task
+    Then Check status successfully <successStatus>
+    When I want to view the task detail
+    Then Check for invalid status <failStatus>
 
     Examples:
       | title                                | workspace_id    | description            | priority | status | url                                  | file_name   | assignee_key | watcher_key | successStatus | failStatus |

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update project feature">
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update mini task service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/constants/UrlConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskVerify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/taskList.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/serenity.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/aplication-dev.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704859474198</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update mini task service">
+      <option name="closed" value="true" />
+      <created>1704938909138</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1704938909138</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -323,7 +327,8 @@
     <MESSAGE value="update git ignore" />
     <MESSAGE value="update post service" />
     <MESSAGE value="update project feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project feature" />
+    <MESSAGE value="update mini task service" />
+    <option name="LAST_COMMIT_MESSAGE" value="update mini task service" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
