@@ -36,6 +36,11 @@ public class AuthSteps {
         restAssuredThat(response -> response.statusCode(successStatus));
     }
 
+    @Then("Check for not found status {int}")
+    public void check_for_not_found_status(Integer notFound_status) {
+        restAssuredThat(response -> response.statusCode(notFound_status));
+    }
+
     @Then("Check for invalid status {int}")
     public void check_for_invalid_status(int failStatus) {
         restAssuredThat(response -> response.statusCode(failStatus));

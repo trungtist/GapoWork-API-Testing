@@ -68,8 +68,10 @@ public class AuthActions {
                 .body(body)
                 .post("https://api.gapowork.vn/auth/v3.0/login");
 
-        user_id = res.path("data.user_id");
-        access_token = res.path("data.access_token");
+        if (res.statusCode() == 200) {
+            user_id = res.path("data.user_id");
+            access_token = res.path("data.access_token");
+        } else System.out.println("Data is null!!!");
     }
 
     @Step("Login with phone number and password")

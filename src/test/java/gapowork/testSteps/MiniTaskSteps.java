@@ -243,8 +243,6 @@ public class MiniTaskSteps {
     List<String> thread_ids;
     List<String> department_ids;
     List<String> role_ids;
-    String[] key;
-
     public static String getProjectId() {
         return Serenity.sessionVariableCalled("projectId");
     }
@@ -252,7 +250,7 @@ public class MiniTaskSteps {
     @When("I add members {string}")
     public void i_add_members(String member_key) {
         user_ids = new ArrayList<>();
-        key = Helper.splitStringToList(member_key);
+        String[] key = Helper.splitStringToList(member_key);
         for (String k : key) {
             user_ids.addAll(searchActions.searchUserInWorkspace(k));
         }
@@ -261,7 +259,7 @@ public class MiniTaskSteps {
     @When("I add threads {string}")
     public void i_add_threads(String thread_key) {
         thread_ids = new ArrayList<>();
-        key = Helper.splitStringToList(thread_key);
+        String[] key = Helper.splitStringToList(thread_key);
         for (String k : key) {
             thread_ids.addAll(searchActions.searchChatConversation(k));
         }
@@ -270,7 +268,7 @@ public class MiniTaskSteps {
     @When("I add departments {string}")
     public void i_add_departments(String department_key) {
         department_ids = new ArrayList<>();
-        key = Helper.splitStringToList(department_key);
+        String[] key = Helper.splitStringToList(department_key);
         for (String k : key) {
             department_ids.addAll(searchActions.searchDepartment(k));
         }
@@ -279,7 +277,7 @@ public class MiniTaskSteps {
     @When("I add roles {string}")
     public void i_add_roles(String role_key) {
         role_ids = new ArrayList<>();
-        key = Helper.splitStringToList(role_key);
+        String[] key = Helper.splitStringToList(role_key);
         for (String k : key) {
             role_ids.addAll(searchActions.searchRole(k));
         }

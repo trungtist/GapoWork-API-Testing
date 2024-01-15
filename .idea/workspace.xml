@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update mini task service">
+    <list default="true" id="d439cfb0-0185-4573-959c-cd447d890372" name="Changes" comment="update config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/hook/HookCucumberMiniTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/auth/AuthActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/pages/miniTask/MiniTaskActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/aplication-dev.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/miniTaskService/task.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/AuthSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/AuthSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gapowork/testSteps/MiniTaskSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/auth.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +84,27 @@
       <recent name="E:\ON SCHOOL\GRADUATION\GapoWork_DoAn\GapoWork-API-Testing\src\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Create and duplicate task list in folder or outside folder">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Check non-existent email">
+    <configuration name="Scenario: Check non-existent email" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth.feature" />
+      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GapoWork-API-Testing" />
+      <option name="NAME_FILTER" value="^Check non\-existent email$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check non\-existent email$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Check non-existent email" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: Create a project with member" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" />
@@ -162,33 +185,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: I create a project with member" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/miniTaskService/project.feature" />
-      <option name="GLUE" value="gapowork.testSteps gapowork.hook net.serenitybdd.cucumber.actors" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="GapoWork-API-Testing" />
-      <option name="NAME_FILTER" value="^I create a project with member$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^I create a project with member$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: I create a project with member" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Check non-existent email" />
         <item itemvalue="Cucumber Java.Scenario: Create and duplicate task list in folder or outside folder" />
         <item itemvalue="Cucumber Java.Scenario: Create and edit task list in folder or outside folder" />
         <item itemvalue="Cucumber Java.Scenario: Create folder after create project" />
         <item itemvalue="Cucumber Java.Scenario: Create a project with member" />
-        <item itemvalue="Cucumber Java.Scenario: I create a project with member" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704938909138</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update config">
+      <option name="closed" value="true" />
+      <created>1704943712811</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1704943712811</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -328,7 +339,8 @@
     <MESSAGE value="update post service" />
     <MESSAGE value="update project feature" />
     <MESSAGE value="update mini task service" />
-    <option name="LAST_COMMIT_MESSAGE" value="update mini task service" />
+    <MESSAGE value="update config" />
+    <option name="LAST_COMMIT_MESSAGE" value="update config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
